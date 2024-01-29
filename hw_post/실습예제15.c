@@ -29,8 +29,6 @@ int main(){
         {12,31}
     };
 
-    int len = strlen(array);
-
     for(int i = 0; i<12; i++){
        
         if(month==array[i][0]){

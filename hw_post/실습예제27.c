@@ -7,9 +7,7 @@ int main(){
      int i = 1;
     /*
    
-    printf("숫자입력(0입력 시 종료) : \n" );
-    scanf("%d",&num);
-    array[0] = num;
+    do while로 풀자!
     */
 
     while(num!=0){
