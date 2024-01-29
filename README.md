@@ -1,3 +1,3 @@
 <div>
-  <h2>Kwangwoon Pre University 😀</h2>
+  <h2>Kwangwoon SW Pre University 😀</h2>
 </div>
