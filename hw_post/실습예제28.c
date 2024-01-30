@@ -2,8 +2,9 @@
 
 int main(){
     int num;
-    int i,save,sum,even,odd = 0;
+    int i,save,sum,max = 0;
     int array[100]={0,};
+    int min = 1000000;
     
     
     do{
@@ -16,13 +17,16 @@ int main(){
     }while(num!=0);
    
     for(int i = 0; i<save;i++){
-        if(array[i]%2==0){
-            even += array[i];
+        if(array[i] > max){
+            max = array[i];
         }
-        else{
-            odd += array[i];
+        else if(array[i] < min){
+            if(array[i]!=0){
+                min = array[i];
+            }
         }
+        
     }
-    printf("홀수 합 : %d\n",odd);
-    printf("짝수 합 : %d\n",even);
+    printf("최댓 값 : %d\n",max);
+    printf("최소 값 : %d\n",min);
 }
