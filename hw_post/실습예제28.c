@@ -26,6 +26,7 @@ int main(){
             }
         }
         
+        
     }
     printf("최댓 값 : %d\n",max);
     printf("최소 값 : %d\n",min);
