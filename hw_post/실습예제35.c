@@ -19,7 +19,7 @@ int main(){
         printf("다릅니다.");
     }
 
-    /*기준 : 전부 00 으로 바꿈.*/
+    /*기준 : 전부 소문자로 바꿈.*/
     for(int i = 0; i<len1; i++){
         if(arr[i]>=65 && arr[i]<=90){
             result1[i] = arr[i] + margin;
@@ -56,7 +56,5 @@ int main(){
     }
 
 
-    
 
-    
 }
