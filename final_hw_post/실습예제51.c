@@ -1,39 +1,33 @@
 #include <stdio.h>
 
-/*포인터 2차원시 1차원으로 변경되는과정 이해 필요*/
+int tmp = 0; 
+
+
+int soinsu(int a){
+    int giho = 0;
+    for(int i=2; i<=a; i++){
+        int cnt = 0;
+        while(a%i==0){
+            printf("%d \n",a);
+            printf("i입니다. %d \n",i);
+            a = a / i;
+            cnt++;
+        }  
+        if(cnt>0){
+            if(giho == 1){
+                printf("X ");
+            }
+            printf("%d^%d ",i,cnt);
+            giho = 1;
+        }
+    }
+    return 0;
+}
+
 
 int main(){
-    int arr[4][8];
-    int *tmp;
-    int sum[10];
-    
-    tmp = &arr[0][0];
+    int num=0;
+    scanf("%d",&num);
+    soinsu(num);
 
-    for(int i = 0; i<8; i++){
-        scanf("%d",&arr[0][i]);
-    }
-
-    sum[0] = *(tmp) + *((tmp)+1);
-    *((tmp+1)) = sum[0];
-
-    sum[1] = *((tmp)+2) + *((tmp)+3);
-    *((tmp+1)+2) = sum[1];
-
-    sum[2] = *((tmp))+4 + *((tmp))+5;
-    *((tmp+1)+4) = sum[2];
-
-    sum[3] = *((tmp))+6 + *((tmp))+7;
-    *((tmp+1)+6) = sum[3];
-
-    sum[4] = *(tmp+1) + *(tmp+1+2);
-    *((tmp+2)) = sum[4];
-
-    sum[5] = *((tmp+1)+4) + *((tmp)+1+6);
-    *((tmp)+2+4) = sum[5];
-
-    sum[6] = *((tmp+2)) + *((tmp)+2+4);
-    *((tmp)+3) = sum[6];
-
-
-    printf("%d",*((tmp+3)));
 }

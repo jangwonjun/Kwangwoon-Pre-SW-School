@@ -1,31 +1,40 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include <string.h>
 
-int tmp = 0; 
+int pos_system()
+{
+	char num[10] = "1";
+	int sum = 0;
 
-
-int soinsu(int a){
-    int giho = 0;
-    for(int i=2; i<=a; i++){
-        int cnt = 0;
-        while(a%i==0){
-            a = a / i;
-            cnt++;
-        }  
-        if(cnt>0){
-            if(giho == 1){
-                printf("X ");
-            }
-            printf("%d^%d ",i,cnt);
-            giho = 1;
-        }
-    }
-    return 0;
+	while (1) {
+		printf("제품(종료 시 0 입력) : ");
+		scanf("%s", num);
+		if (!strcmp(num, "coffee")) {
+			sum += 1000;
+		}
+		else if (!strcmp(num, "bread")) {
+			sum += 1000;
+		}
+		else if (!strcmp(num, "sprite")) {
+			sum += 1500;
+		}
+		else if (!strcmp(num, "coke")) {
+			sum += 1500;
+		}
+		else if (!strcmp(num, "lemonade")) {
+			sum += 2000;
+		}
+		else if (!strcmp(num, "0")) {
+			return sum;
+		}
+		else {
+			printf("해당 제품은 없습니다.\n");
+		}
+	}
 }
 
-
-int main(){
-    int num=0;
-    scanf("%d",&num);
-    soinsu(num);
-
+int main()
+{
+	printf("제품 구매총액 : %d", pos_system());
 }

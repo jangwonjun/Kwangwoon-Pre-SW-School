@@ -1,23 +1,20 @@
 #include <stdio.h>
 
-int sum = 0;
+int main()
+{
+	int arr[29] = {0, };
+	for (int i = 2; i <= 30; i++) {
+		*(arr + i - 2) = i;
+	}
 
-int add_arr(int *arr){
-    for(int i = 0; i<5; i++){
-        sum = sum + *(arr+i);
-    }
-    return sum;
-}
-
-int main(){
-    int a[5];
-    int *arr;
-
-    arr = a;
-
-    for(int i=0; i<5; i++){
-        scanf("%d",&a[i]);
-    }
-    int sum = add_arr(arr);
-    printf("배열 내의 숫자 합 %d",sum);
+	for (int i = 2; i <= 30; i++) {
+		for (int j = i * 2; j <= 30; j=j+i) {
+			*(arr + j - 2) = 0;
+		}
+	}
+	for (int i = 0; i < 29; i++) {
+		if (*(arr+i) != 0) {
+			printf("%d ", *(arr+i));
+		}
+	}
 }
